@@ -1,3 +1,4 @@
+# import tidyverse
 library(tidyverse)
 
 covid <- read.csv("C:/Users/Open User/Desktop/Muideen_SAIL/covid19_nigeria_states.csv")
