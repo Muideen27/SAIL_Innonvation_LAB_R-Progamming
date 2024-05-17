@@ -5,3 +5,5 @@
 
 arr1 <- array(c(1:18), dim = c(2, 3, 3))
 arr1
+
+# The dimension(2, 3, 3) simply means 2 rows, 3 column and 3 matrix
