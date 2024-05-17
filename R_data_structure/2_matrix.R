@@ -31,4 +31,7 @@ yemi
 
 
 rownames <- c("row1", "row2", "row3", "row4")
-colnames <- c("col1", "col2", "col3")
+colnames <- c("col1", "col2", "col3", "col4")
+matrix_2 <- matrix(c(1:16), ncol = 4, dimnames = list(rownames, colnames))
+matrix_2
+
