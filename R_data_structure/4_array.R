@@ -16,6 +16,7 @@ colnames <- c("col1", "col2", "col3", "row4")
 matrix_name <- c("Olu", "Gift", "Ajala")
 arr <- array(c(1:40), dim = c(4, 4, 3), dimnames = list(rownames, colnames))
 arr
+
 fac <-factor(arr)
 fac
 
@@ -32,3 +33,8 @@ matrix_0
 # Exercise 2 Print out element with numerical value 40 from the array!
 
 # Hint print(array_name[r,c, m])
+
+num_value <- array(c(1:40), dim = c(4, 4, 3))
+num_value
+print(num_value[4, 2, 3])
+num_value[,, 1] * num_value[,, 2]
