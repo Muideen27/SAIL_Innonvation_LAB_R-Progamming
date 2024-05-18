@@ -18,3 +18,12 @@ arr <- array(c(1:40), dim = c(4, 4, 3), dimnames = list(rownames, colnames))
 arr
 fac <-factor(arr)
 fac
+
+# Exercise You can attempt achieving same by combining vectors to form the matrices.
+
+# Hint c(vector_1, vector_2)
+
+vector_1 <- c(1:4)
+vector_2 <- c(0, 7, 8, 1)
+matrix_0 <- array(c(vector_1, vector_2), dim = c(2, 2, 2))
+matrix_0
