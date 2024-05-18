@@ -19,11 +19,16 @@ arr
 fac <-factor(arr)
 fac
 
-# Exercise You can attempt achieving same by combining vectors to form the matrices.
+# Exercise 1 You can attempt achieving same by combining vectors to form the matrices.
 
 # Hint c(vector_1, vector_2)
 
 vector_1 <- c(1:4)
 vector_2 <- c(0, 7, 8, 1)
-matrix_0 <- array(c(vector_1, vector_2), dim = c(2, 2, 2))
+combined_vector <- c(vector_1, vector_2)
+matrix_0 <- array(c(combined_vector), dim = c(2, 2, 2))
 matrix_0
+
+# Exercise 2 Print out element with numerical value 40 from the array!
+
+# Hint print(array_name[r,c, m])
