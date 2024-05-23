@@ -12,4 +12,5 @@ if (sch == "Pretoria" | sch == "Windhoek" | sch == "Lusaka" | sch == "Harare") {
   
 }
 
+
 # The | sign is "OR" Operation
