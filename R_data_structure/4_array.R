@@ -38,3 +38,4 @@ num_value <- array(c(1:40), dim = c(4, 4, 3))
 num_value
 print(num_value[4, 2, 3])
 num_value[,, 1] * num_value[,, 2]
+
