@@ -12,3 +12,16 @@ for (someone in participant) {
     break
   }
 }
+
+# Example two
+participants <- c('Squarepants', 'Star', 'Tentacles', 'Krabs', 'Cheeks', 'Squirrel', 'The Lobster', 'Snail', 'Crabs', 'Efraim', 'Krabs', 'Snail', 'Firey', 'Puff')
+
+for(i in participants){
+  
+  print(paste("This is participant ", i, " I am still looking for Efraim"))
+  if(i == "Efraim"){
+    print("Efraim has been found out")
+    
+    break
+  }
+}
