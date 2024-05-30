@@ -68,6 +68,7 @@ factorial_n(0)
 # Write a R program function to find the sum of all even
 # numbers between two given numbers using a for loop.
 
+# Method 1:
 sum_of_even_numbes <- function(start_num, end_num) {
   sum <- 0
   for (i in start_num:end_num) {
@@ -84,3 +85,20 @@ end_num <- 10
 result <- sum_of_even_numbes(start_num, end_num)
 
 print(paste("The sum of even numbers between", start_num, "and", end_num, "is", result))
+
+num <- c(1:20)
+sum_even <- 0
+sum_odd <- 0
+
+for (i in num) {
+  if(i %% 2 == 0) {
+    sum_even <- sum_even + i
+    print(paste("num of even", i))
+  } else {
+    sum_odd <- sum_odd + i
+    print(paste("num of odd", i))
+  }
+}
+print(sum_even)
+print(sum_odd)
+
