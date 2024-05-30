@@ -1,3 +1,4 @@
+#########
 # Write a R program that creates a for loop to print numbers from 1 - 10
 
 for(i in 1:10) {
@@ -5,11 +6,19 @@ for(i in 1:10) {
 }
 
 mens <- c(1:10)
+print (mens)
 
-for (men in mens) {
-  print(paste("I AM MAN", men))
+for (i in mens) {
+  print(i)
 }
 
+row_2 <- c("Ayo", "Lara", "Samuel", "Modupe", "Muideen")
+
+for(people in row_2) {
+  print(people)
+}
+
+print(row_2)
 
 # Write a R program that create while loop to calculate
 # the factorial of a given number
@@ -33,7 +42,28 @@ fact_while <- factorial_while(number)
 
 print(paste("Factorial of", number, "is", fact_while))
 
+# Method 2 :
+cal_factorial <- function(n) {
+  while (n == 1) {
+    return(1)
+  }
+  while(n > 1) {
+    return (n * cal_factorial(n - 1))
+  }
+}
+cal_factorial(5)
 
+# Method 3 : using if else in case of recursion 
+
+factorial_n <- function(n) {
+  if (n == 0) {
+    return(1)
+  } else {
+    return(n * factorial_n(n - 1))
+  }
+}
+factorial_n(5)
+factorial_n(0)
 
 # Write a R program function to find the sum of all even
 # numbers between two given numbers using a for loop.
