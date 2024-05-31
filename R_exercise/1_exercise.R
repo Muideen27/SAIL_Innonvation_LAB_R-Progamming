@@ -50,5 +50,4 @@ sequence <- function(num) {
 
 numbers <- rbinom( n = 10, size = 10, prob = 0.5)
 numbers
-numbers(sequence)
 
