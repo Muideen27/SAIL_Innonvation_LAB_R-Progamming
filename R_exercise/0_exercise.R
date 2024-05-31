@@ -20,6 +20,8 @@ for(people in row_2) {
 
 print(row_2)
 
+
+################
 # Write a R program that create while loop to calculate
 # the factorial of a given number
 
@@ -65,6 +67,8 @@ factorial_n <- function(n) {
 factorial_n(5)
 factorial_n(0)
 
+
+#########
 # Write a R program function to find the sum of all even
 # numbers between two given numbers using a for loop.
 
@@ -93,10 +97,10 @@ sum_odd <- 0
 for (i in num) {
   if(i %% 2 == 0) {
     sum_even <- sum_even + i
-    print(paste("num of even", i))
+    print(paste("num is even", i))
   } else {
     sum_odd <- sum_odd + i
-    print(paste("num of odd", i))
+    print(paste("num is odd", i))
   }
 }
 print(sum_even)
