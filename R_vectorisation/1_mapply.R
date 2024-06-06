@@ -35,17 +35,24 @@ print(areas)
 ###########
 #Example 2
 # Define the heights (in cm) and weights (in kg)
+# Required libraries
+library(dplyr)
+library(ggplot2)
+
+# Data
 heights <- c(170, 165, 180, 155, 190)
 weights <- c(70, 55, 90, 45, 100)
+ages <- c(25, 34, 45, 29, 52)
+genders <- c("Male", "Female", "Male", "Female", "Male")
+waist_circumferences <- c(80, 70, 100, 60, 110)
 
-# Define a function to calculate BMI
+# Functions
 calculate_bmi <- function(height, weight) {
   height_in_meters <- height / 100
   bmi <- weight / (height_in_meters ^ 2)
   return(bmi)
 }
 
-# Define a function to classify BMI
 classify_bmi <- function(bmi) {
   if (bmi < 18.5) {
     return("Underweight")
@@ -58,19 +65,76 @@ classify_bmi <- function(bmi) {
   }
 }
 
-# Use mapply to calculate BMI for each individual
+calculate_whtr <- function(waist, height) {
+  return(waist / height)
+}
+
+# Compute BMI and classifications
 bmi_values <- mapply(calculate_bmi, heights, weights)
-
-# Use mapply to classify each BMI
 bmi_classes <- mapply(classify_bmi, bmi_values)
+whtr_values <- mapply(calculate_whtr, waist_circumferences, heights)
 
-# Combine results into a data frame
+# Combine into a data frame
 results <- data.frame(
   Height = heights,
   Weight = weights,
+  Age = ages,
+  Gender = genders,
   BMI = round(bmi_values, 2),
-  Classification = bmi_classes
+  Classification = bmi_classes,
+  Waist_to_Height_Ratio = round(whtr_values, 2)
 )
 
-# Print the result
+# Print results
 print(results)
+
+# Summarize by BMI classification
+summary_by_classification <- results %>%
+  group_by(Classification) %>%
+  summarise(
+    Average_Height = mean(Height),
+    Average_Weight = mean(Weight),
+    Average_Age = mean(Age),
+    Count = n()
+  )
+
+print(summary_by_classification)
+
+# Visualize BMI distribution
+ggplot(results, aes(x = BMI, fill = Classification)) +
+  geom_histogram(binwidth = 1, position = "dodge", color = "black") +
+  labs(title = "BMI Distribution",
+       x = "BMI",
+       y = "Frequency") +
+  scale_fill_manual(values = c("Underweight" = "blue", 
+                               "Normal weight" = "green", 
+                               "Overweight" = "orange", 
+                               "Obese" = "red"))
+
+# Scatter plot for BMI vs Age
+ggplot(results, aes(x = Age, y = BMI, color = Classification, shape = Gender)) +
+  geom_point(size = 3) +
+  labs(title = "BMI vs Age",
+       x = "Age",
+       y = "BMI") +
+  scale_color_manual(values = c("Underweight" = "blue", 
+                                "Normal weight" = "green", 
+                                "Overweight" = "orange", 
+                                "Obese" = "red")) +
+  theme_minimal()
+
+# Health risk groups
+results <- results %>%
+  mutate(Health_Risk = case_when(
+    BMI >= 30 ~ "High Risk",
+    BMI >= 25 & BMI < 30 ~ "Moderate Risk",
+    TRUE ~ "Low Risk"
+  ))
+
+# Visualize health risks
+ggplot(results, aes(x = Age, y = BMI, color = Health_Risk, shape = Gender)) +
+  geom_point(size = 3) +
+  labs(title = "Health Risk Groups by Age and BMI",
+       x
+       
+       
