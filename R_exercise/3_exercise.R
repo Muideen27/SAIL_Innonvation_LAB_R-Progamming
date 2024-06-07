@@ -2,7 +2,13 @@
 
 
 # Load the library readr for reading rectangular data like csv file,
+
 library(readr)
+install.packages("prettyunits")
+library(inspectdf)
+install.packages("fastmap")
+install.packages("bslib")
+library(esquisse)
 
 if(!require(pacman)) install.packages("pacman")
   pacman::p_load(
@@ -18,7 +24,8 @@ if(!require(pacman)) install.packages("pacman")
   
   # To view the entire dataset
   view(ebola_sierra_lone)
-  
+  # install.packages("esquisse")
+  library(esquisse)
   esquisse::esquisser(ebola_sierra_lone)
   
   install.packages("skimr")

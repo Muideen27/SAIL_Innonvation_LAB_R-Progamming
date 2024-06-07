@@ -73,6 +73,7 @@ calculate_whtr <- function(waist, height) {
 bmi_values <- mapply(calculate_bmi, heights, weights)
 bmi_classes <- mapply(classify_bmi, bmi_values)
 whtr_values <- mapply(calculate_whtr, waist_circumferences, heights)
+whtr_values
 
 # Combine into a data frame
 results <- data.frame(
@@ -88,7 +89,7 @@ results <- data.frame(
 # Print results
 print(results)
 
-# Summarize by BMI classification
+`# Summarize by BMI classification
 summary_by_classification <- results %>%
   group_by(Classification) %>%
   summarise(

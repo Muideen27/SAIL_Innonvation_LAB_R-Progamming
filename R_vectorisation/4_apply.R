@@ -30,3 +30,5 @@ t
 library(MASS)
 library(base)
 wunmi <- state.x77 %>% pull(population)
+
+View(state.x77)
