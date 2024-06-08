@@ -62,3 +62,13 @@ No manipulation has taken place on the data, nothing has been cleaned, no summar
 - A Word/text file format.
 - Segment referred to as a Research Methodology or Study design if it is experimental. This should provide a detailed description of haow data was collected.
 - Segment referred to as the `Code book`. That should describe your variable(s) and their unit(S).
+
+## Instruction list
+
+- R or Python Scripts (in this fellowship)
+
+- The raw data is the input
+
+- The tidy data (the processed data) is the output
+
+- There are no parameters to the script
