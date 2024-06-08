@@ -50,3 +50,15 @@ No manipulation has taken place on the data, nothing has been cleaned, no summar
 - A row with variable name at the top of each file.
 - Sensible variable names human readable (DeathRate X DRate)
 - Saved one file per table.
+
+## The code book
+
+- Information about your variable (units, source, coveat) that are not included in the tidy data.
+- Information about the summarisation applied (grouping, treated options-missing, outliers) choices you made
+- information about your Research Methodology
+
+*Other notes:*
+
+- A Word/text file format.
+- Segment referred to as a Research Methodology or Study design if it is experimental. This should provide a detailed description of haow data was collected.
+- Segment referred to as the `Code book`. That should describe your variable(s) and their unit(S).
