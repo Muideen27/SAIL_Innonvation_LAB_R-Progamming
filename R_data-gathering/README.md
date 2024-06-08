@@ -142,3 +142,63 @@ if(!file.exists("data_science")){
 *Webscraping*
 
 **Webscraping:** Programatically extracting data from the HTML code of websites.
+
+## Example -  Our covid-19 data
+
+- ![Link to covid_19 data - ekoanalytics.net](https://ekoanalytics.net/data-catalogue.html)
+
+## Using R to download the file from the web
+
+fileUrl <- "https://ekoanalytics.net/data/covid19_nigeria_states.csv"
+
+download.file(fileUrl, destfile = "./data_science/covid_19.csv", method = "curl")
+
+list.files("./data_science")
+[1] "covid_19.csv"                                 
+[2] "nigeria_intra_Africa_trade_connectedness.xlsx"
+dateDownloaded <- date()
+
+dateDownloaded
+[1] "Mon Jun 26 19:28:54 2023"
+
+## Important notes about download.file()
+- We can use download.file() when the url starts with http
+
+- Same will work on Windows even if the url starts with https
+
+- With Mac however, we may need to set method = “curl” if the url starts with https
+
+- Download time may depend on the file size
+
+- Record when the download takes place (last accessed in academic practice).
+
+## Reading downloaded/local files
+After downloading needed file(s), in our case the covid_data, we then need to know how to read files from our local drive(s).
+
+### Loading flat files - read.table()
+
+- read.table() can be the default function for reading data into R
+
+- It is flexible and robust but in some cases will require more parameters
+
+- Parameters such as; file, header, sep, row.names, nrows
+
+- Related: read.csv(), read.csv2()
+
+- I am a proponent of file_type specific function or a more general function (easyr)
+
+- We should note that reading big data into RAM - may cause some problems. There are so many ways to handle big data when your RAM is small.
+
+## covid_data example
+covidData <- read.table("./data_science/covid_19.csv")
+
+head(covidData)
+
+Error in scan(file = file, what = what, sep = sep, quote = quote, dec = dec,  : line 1 did not have 3 elements
+
+### Example: Reading our covid data
+covidData2 <- read.table("./data_science/covid_19.csv", sep=",", header=TRUE)
+
+head(covidData2)
+
+if you experience the error: cannot open the connection, your path to the file needs to be corrected
