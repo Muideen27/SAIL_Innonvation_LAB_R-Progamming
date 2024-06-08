@@ -1,20 +1,16 @@
 # About this session
 ## We will cover basic ideas behind obtaining data ready for analysis
 
-#### Finding and extracting data
+- Finding and extracting data
+- Principles of tidy data and how to produce tidy data
+- Implementing a range of R packages
 
-#### Principles of tidy data and how to produce tidy data
+## Necessary to have understood:
 
-#### Implementating a range of R packages
+- The Data Scientist’s Toolbox
+- R Programming
 
-## Necessary to have understood
+## Session will be useful:
 
-#### The Data Scientist’s Toolbox
-
-#### R Programming
-
-## Session will be useful
-
-#### Data Exploration
-
-#### Reporting/Reproducing Data Analysis
+- Data Exploration
+- Reporting/Reproducing Data Analysis
