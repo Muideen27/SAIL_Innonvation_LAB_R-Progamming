@@ -15,7 +15,7 @@
 
 ### Session will be useful:
 
-- Data Exploration
+- Data Exploration.
 
 - Reporting/Reproducing Data Analysis
 
