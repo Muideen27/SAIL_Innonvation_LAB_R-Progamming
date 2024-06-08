@@ -308,4 +308,25 @@ names(ajJsonData$owner)
 
 ajJsonData$owner$repos_url
   
-  
+
+## Writing data frames to JSON
+library(jsonlite)
+myjson <- toJSON(iris, pretty=TRUE)
+cat
+
+## Convert back to JSON
+library(jsonlite)
+myjson <- toJSON(iris, pretty=TRUE)
+iris2 <- fromJSON(myjson)
+head(iris2)
+
+## mySQL
+Widely used open source database software
+Often used in internet based applications
+Data are structured in:
+  - Databases
+  - Tables within databases
+  - Fields within tables
+Each row is referred to as a record
+
+![http://www.mysql.com/](http://www.mysql.com/)
