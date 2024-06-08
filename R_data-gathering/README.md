@@ -17,7 +17,7 @@
 
 ## Definition of data
 
-Data is a collection of facts or figures that can be *used to make decisions or solve problems*. It can be quantitative or qualitative, and it can be structured or unstructured.
+Data is a collection of facts or figures that can be **used to make decisions or solve problems**. It can be quantitative or qualitative, and it can be structured or unstructured.
 
 - Sources: Data.org & Wikipedia
 
