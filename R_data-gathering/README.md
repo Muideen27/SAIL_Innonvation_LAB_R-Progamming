@@ -223,3 +223,89 @@ if you experience the error: cannot open the connection, your path to the file n
 
 *Quotation marks ` or ” placed in data values, can cause some troubles in reading flat file, setting quote=“” often resolves the problem.*
 
+## Excel files
+
+*The file format still remains one of the most widely used file format (sharing data).*
+
+### Download Nigeria trade excel file
+
+Recall how we downloaded our covid_data.
+
+fileUrl <- "https://ekoanalytics.net/data/nigeria_intra_Africa_trade_connectedness.xlsx"
+
+download.file(fileUrl, destfile = "./data_science/nigeria_africa_trade.xlsx", method = "curl")
+
+list.files("./data_science")
+
+dateDownloaded <- date()
+
+dateDownloaded
+
+## xlsx packages
+
+read.xlsx(), read.xlsx2() {xlsx package}
+
+library(readxl)
+
+naijaTrade <- read_excel("./data_science/nigeria_africa_trade.xlsx")
+
+head(naijaTrade)
+
+## Reading specific rows and columns
+
+library(readxl)
+
+subset row 1-4 and column 2 - 3
+
+naijaTradeSubset <- read_excel("./data_science/nigeria_africa_trade.xlsx")[1:4,2:3]
+
+naijaTradeSubset
+
+
+## Notes
+
+- To write out an Excel file, we can use writexl(), write.xlsx () amongst other. Please, note varying arguements for each function you intend to use.
+
+- I suggest that you save your data in comma separated files (.csv) or tab separated files (.tab/.txt) as they are easier to distribute.
+
+_ For writing and manipulating Excel files, You can look at: (XLConnect package)
+
+## JSON
+JSON = Javascript Object Notation
+
+Lightweight data storage
+
+It is a common format for data from APIs (Application Programming Interfaces)
+
+JSON structure is similar to that of XML but they are different interms of syntax/format.
+
+Data stored as: 
+  - Numbers (double)
+  - Strings (double quoted)
+  - Boolean (true or false)
+  - Array (ordered, comma separated enclosed in square brackets [])
+  - Object (unorderd, comma separated collection of key:value pairs in curley brackets {})
+  
+  ## Example JSON file
+  ![Example JSON file](https://api.github.com/users/bunmiaj/repos)
+  
+## Reading JSON data {jsonlite package}
+  
+library(jsonlite)
+
+ajJsonData <- fromJSON("https://api.github.com/users/bunmiaj/repos")
+
+names(ajJsonData )
+
+ajJsonData$name
+
+## Nested objects in JSON
+library(jsonlite)
+
+ajJsonData <- fromJSON("https://api.github.com/users/bunmiaj/repos")
+
+names(ajJsonData$owner)
+
+ajJsonData$owner$repos_url
+  
+  
