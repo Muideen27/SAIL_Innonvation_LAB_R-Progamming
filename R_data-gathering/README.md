@@ -202,3 +202,24 @@ covidData2 <- read.table("./data_science/covid_19.csv", sep=",", header=TRUE)
 head(covidData2)
 
 if you experience the error: cannot open the connection, your path to the file needs to be corrected
+
+### Example: Reading our covid data
+read.csv sets sep=“,” and header=TRUE
+
+covidData3 <- read.csv("./data_science/covid_19.csv")
+
+head(covidData3)
+
+if you experience the error: cannot open the connection, your path to the file needs to be corrected
+
+### Some other important parameters
+- *nrows* : Number of rows to read from the file (e.g. nrows=10 will read 10 lines).
+
+- *skip* : Number of lines to skip before starting to read the file
+
+- *quote* : You can tell R whether there are quoted values quote="" means no quotes.
+
+- *na.strings* : Used to set the character that represents a missing value.
+
+*Quotation marks ` or ” placed in data values, can cause some troubles in reading flat file, setting quote=“” often resolves the problem.*
+
