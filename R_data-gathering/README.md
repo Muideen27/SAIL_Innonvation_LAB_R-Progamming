@@ -40,4 +40,13 @@ No manipulation has taken place on the data, nothing has been cleaned, no summar
 
 ## The tidy data.
 
-- 1. one variable per column 
+- One variable per column
+- One observation per row
+- One table per subject
+- Common column(s) in the case of multiple tables (in the table that allows them to be linked(allowed linking or merging)).
+
+*Other notes:*
+
+- A row with variable name at the top of each file.
+- Sensible variable names human readable (DeathRate X DRate)
+- Saved one file per table.
