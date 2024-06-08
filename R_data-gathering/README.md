@@ -37,3 +37,7 @@ Data is a collection of facts or figures that can be `used to make decisions or 
 *Discussing raw data when:*
 
 No manipulation has taken place on the data, nothing has been cleaned, no summary of any or no software applied on it.
+
+## The tidy data.
+
+- 1. one variable per column 
