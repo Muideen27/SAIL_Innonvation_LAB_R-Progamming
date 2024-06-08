@@ -4,10 +4,10 @@
 # Load the library readr for reading rectangular data like csv file,
 
 library(readr)
-install.packages("prettyunits")
+# install.packages("prettyunits")
 library(inspectdf)
-install.packages("fastmap")
-install.packages("bslib")
+# install.packages("fastmap")
+# install.packages("bslib")
 library(esquisse)
 
 if(!require(pacman)) install.packages("pacman")
