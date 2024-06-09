@@ -1,4 +1,4 @@
-
+# SOlve the quadratic equation below
 
 
 quadratic <- function(a, b, c) {
