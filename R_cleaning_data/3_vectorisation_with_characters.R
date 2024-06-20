@@ -1,7 +1,7 @@
 # Vectorisation with characters
 
 # Read a CSV file containing ambulance data from Nigeria into a data frame
-ambulancesData <- read.csv("./data/nigeria_ambulances.csv")
+ambulancesData <- read.csv("C:/Users/Open User/Desktop/Muideen_SAIL/nigeria_ambulances.csv")
 
 # Split the column names of the data frame at the underscore character
 splitNames <- strsplit(names(ambulancesData), "\\_")
