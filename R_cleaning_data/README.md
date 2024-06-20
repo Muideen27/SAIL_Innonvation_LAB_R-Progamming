@@ -1,16 +1,16 @@
 # About this session
 
-### We will cover basic ideas behind obtaining data ready for analysis
+### Sequel to our earlier discussions on Tidy Data, we will learn about data cleaning, covering handling of strings and dates.
 
-- Finding and extracting data
+- Changing character case
 
-- Principles of tidy data and how to produce tidy data
+- Splitting characters
 
-- Implementating a range of R packages
+- vectorisation with vector
 
 ### Necessary to have understood
 
-- The Data Scientist’s Toolbox
+- Gathering Data
 
 - R Programming
 
@@ -19,3 +19,4 @@
 - Data Exploration
 
 - Reporting/Reproducing Data Analysis
+
