@@ -11,3 +11,8 @@ names(ambulances)
 
 # Remove underscores from the column names and print the modified names
 sub("_", "", names(ambulances))
+
+
+# Application Note
+# This code snippet demonstrates a common preprocessing task where you read data, 
+# inspect a sample of it, and clean up column names.
