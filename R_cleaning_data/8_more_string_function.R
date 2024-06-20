@@ -22,3 +22,13 @@ sa_ft <- paste("HRM", sa_b4)
 # Display the concatenated result
 sa_ft
 
+
+# More
+
+# Concatenate two strings without any separator
+paste0("Senator", "Adetokunbo")
+paste("Senator Adetokunbo") # with a seperator
+
+# Trim leading and trailing whitespace from a string
+str_trim("Senator      ")
+
