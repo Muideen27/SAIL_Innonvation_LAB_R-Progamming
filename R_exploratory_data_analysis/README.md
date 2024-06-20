@@ -30,3 +30,34 @@
 - Data Analysis
 
 - Reporting/Reproducing Data Analysis
+
+## Required Libraries
+- library(tidyverse)
+- library(learnr)
+- library(DataExplorer)
+- library(explore)
+- library(SmartEDA)
+- library(wordcloud2)
+- library(readxl)
+- library(DataExplorer)
+- library(tidytext)
+- library(wordcloud)
+- library(topicmodels)
+- library(tm)
+- library(visNetwork)
+- library(qdapRegex)
+- library(syuzhet)
+- library(ggraph)
+
+## EDA 
+
+Exploratory Data Analysis (EDA) is a systematic process of investigating a dataset to gain insights about its structure, distributions, and relationships.
+
+
+It is an important step in the data science process, as it can help you to understand your data and to identify potential problems or opportunities.
+
+## Steps in EDA
+
+- Data Exploration
+- Data Cleaning
+- Data Visualization
