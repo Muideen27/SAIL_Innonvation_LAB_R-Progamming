@@ -9,3 +9,4 @@
 #     y            = "total_death",
 #     report_title = "EDA Report - Covid Death in Nigerian States"
 #   )
+#

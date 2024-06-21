@@ -26,4 +26,5 @@ plot = data.frame(words = names(freq), count = freq)
 plot = subset(plot, plot$count > 150) 
 plot <- plot[with(plot, order(-count)), ]
 
-#plot
+#plotS
+#
