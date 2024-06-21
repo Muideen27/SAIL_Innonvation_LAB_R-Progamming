@@ -1,3 +1,4 @@
+library(dplyr)
 # Data preparation_stage
 ## read in our data in any format ... read.csv(), read_csv(), read_excel(), fromJSON()
 
@@ -11,7 +12,8 @@ str(covid_data)
 
 ## Select and group the data (if necessary) ... filter(), subset()
 covid_data %>% 
-  subset(states == "Kaduna") %>% 
+  subset(states == "Lagos") %>% 
   group_by(states, month) %>% 
   summarize(count = n()) %>% 
   as.data.frame()
+
