@@ -110,3 +110,36 @@ The plot may be drawn on a specific coordinate and may require some transformati
 - Overlay it with necessary summary
 
 - Annotate on it/Metadata
+
+
+## Annotate on plots
+Labels:
+
+- xlab()
+- ylab()
+- labs()
+- ggtitle()
+Recall, we can modify the “geom” (geom_point(), geom_smooth())
+
+Use theme() for things that will affect the entire plot
+
+- e.g., theme(legend.position = "none")
+Two standard appearance themes are included
+
+- theme_gray(): (gray background) - default
+
+- theme_bw(): (plain background)
+
+## Saving Plots
+- We will first need to specify files to save our images using a () such as jpeg(), png(), svg() or pdf(). Additional argument indicating the width and the height of the image can be also used.
+
+- We then create the plot
+
+- Necessary to close the file with dev.off()
+
+## Notes and further resources
+- Make use of ggplot2 materials on github for auto EDA
+https://ggplot2.tidyverse.org/
+
+- Make use of plotly materials on github for auto EDA
+https://plotly.com/r/
