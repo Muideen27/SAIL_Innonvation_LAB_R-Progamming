@@ -36,13 +36,45 @@ print(nigerian_markets_sf)
 mapview(nigerian_markets_sf)
 
 # Add the leaflet map with various tile layers and markers
-leaflet(nigerian_markets_sf) %>%
+
+############# Option 1 
+leaflet() %>%
   addProviderTiles(providers$MtbMap) %>%
   addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
-  addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") %>%
+  addProviderTiles(providers$Stadia.StamenTonerLite, group = "Toner Lite") %>%
   addLayersControl(baseGroups = c("Toner Lite", "World Imagery")) %>%
   addMarkers(
     label = ~market_name, # Use market_name for the label
+    clusterOptions = markerClusterOptions(),
+    popup = ~ifelse(!is.na(OBJECTID),  # Use OBJECTID for the popup condition
+                    as.character(OBJECTID),  # Use OBJECTID for the popup value
+                    "Not sure of the market's location")
+  )
+
+########### Option 2 Using API KEY
+# Add the leaflet map with various tile layers and markers
+leaflet(nigerian_markets_sf) %>%
+  addProviderTiles("Stadia.StamenTonerLite", options = providerTileOptions(apiKey = "664c6863-3beb-4c5c-91b6-e9f69793390d")) %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
+  addLayersControl(baseGroups = c("Toner Lite", "World Imagery")) %>%
+  addMarkers(
+    label = ~market_name, # Use market_name for the label
+    clusterOptions = markerClusterOptions(),
+    popup = ~ifelse(!is.na(OBJECTID),  # Use OBJECTID for the popup condition
+                    as.character(OBJECTID),  # Use OBJECTID for the popup value
+                    "Not sure of the market's location")
+  )
+
+########## Option 3:
+
+# Add the leaflet map with various tile layers and markers
+leaflet(nigerian_markets_sf) %>%
+  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "OpenStreetMap") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "World Imagery")) %>%
+  addMarkers(
+    data = nigerian_markets_sf, # Pass the spatial data
+    label = ~market_settlement_name, # Use market_settlement_name for the label
     clusterOptions = markerClusterOptions(),
     popup = ~ifelse(!is.na(OBJECTID),  # Use OBJECTID for the popup condition
                     as.character(OBJECTID),  # Use OBJECTID for the popup value
