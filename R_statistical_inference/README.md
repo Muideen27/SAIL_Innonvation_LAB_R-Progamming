@@ -1,5 +1,5 @@
 # Statistical Inference 
-### Author: Muideen Ilori
+##### Author: Muideen Ilori
 
 ## About the session
 
