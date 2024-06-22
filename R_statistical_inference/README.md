@@ -140,15 +140,13 @@ A confidence interval is an interval associated with a particular test or proced
 
 - There are four possible outcomes of our statistical decision process
 
-Truth |	Decide |	Result
--
-H0 | H0 | Correctly accept null
--
-H0 | Ha | Type I error`
--
-Ha | Ha | Correctly reject null
--
-Ha |H0 | Type II error
+| Null Hypothesis (H0) | Alternative Hypothesis (Ha) | Result                        |
+|----------------------|-----------------------------|-------------------------------|
+| H0                   | H0                          | Correctly accept null         |
+| H0                   | Ha                          | Type I error                  |
+| Ha                   | Ha                          | Correctly reject null         |
+| Ha                   | H0                          | Type II error                 |
+
 
 ## One Sample Z-Tests
 
