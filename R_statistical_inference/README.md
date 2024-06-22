@@ -1,7 +1,8 @@
-#Statistical Inference 
-####Author: Muideen Ilori
+# Statistical Inference 
+### Author: Muideen Ilori
 
 ## About the session
+
 in this session we will learn about the concept of statistical inference without saddling us with the Mathematics of the Algebra. 
 
 The concepts has beeen chosen among so many we will continue to meet along our data Science journey because of their importance in understanding `Regression Analysis and Machine Learning`
@@ -35,6 +36,7 @@ Predicting Election Results
 - Even for smaller electorate (200), people can change their minds before election date (Uncertainty)
 
 ## Motivation 2:
+
 is lockdown effective in curbing COVID-19 spread in Africa?
 - Lockdown or COVID-19?
 - Economic hardships == Severe global economic downturn (IMF, 2020)
@@ -64,3 +66,37 @@ conclusions?
 design/conduct of our analysis?
 - How randomn is our data and how do we use or adjust for it?
 - Are we estimating mechanism or a phenomena in the study?
+
+## Goals of inference
+
+- 1. Quantifying the uncertainty of an estimate of a population behaviour (the
+proportion of people who wit vole for a candidate in an election).
+- 2. Determining if a population quantity as a benchmark value ("is the treatment effective?
+- 3. Infering a mechanistic relationship when quantitas are measured with noise
+("What is the slope of Nigerian income masticity for luxury goods?
+- 4 Determining the impact of a policy? (If we increase lockdown intensity, will
+COVID-1 spread reduce?")
+
+## Key terms to note
+
+- Randomization
+- Bouncing unobserved may confound inferences of interest
+- Random sampling
+
+Obtaining data that is representative of the population
+- Sampling modes
+
+"Creating a model for the sampling process (iid)-independent and identically
+distributed
+- Hypothesis testing
+Decision making under uncertainly
+- Confidence intervals
+Qualifying uncertainty in an estimation
+- Study design
+Designing as experiment to minimize biases and variability
+- Nonparametric bootstrapping
+the process of using the data to create inferences, with minimal model assumptions
+
+## Significance testing 
+
+A type of statistical inference is called significance testing in which a hypothesis is tested using an appropriate statistical model, with associated tests of significance.
