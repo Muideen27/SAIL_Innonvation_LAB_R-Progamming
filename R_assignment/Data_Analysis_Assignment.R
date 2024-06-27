@@ -6,7 +6,6 @@ library(readxl)
 library(janitor)
 library(DataExplorer)
 library(plotly)
-install.packages("psych")
 library(psych)
 library(readxl)
 
@@ -93,11 +92,20 @@ ggplot(clean_economy_data, aes(x = inflation_rate, y = unemployment)) +
 
 
 # comparing various inflation rate of all the presidents
- inflation <- ggplot(clean_economy_data, aes(president,inflation_rate,fill = president))+
+library(ggplot2)
+
+# Create the bar plot without x-axis labels
+inflation <- ggplot(clean_economy_data, aes(x = president, y = inflation_rate, fill = president)) +
   geom_col() +
-  labs(title = "") + 
-  labs(x = "President", y = "Inflation Rate") 
- ggplotly(inflation)
+  labs(title = "Inflation Rate by President") + 
+  labs(x = NULL, y = "Inflation Rate") +  # Remove x-axis label
+  theme(axis.text.x = element_blank(),  # Remove x-axis text
+        axis.ticks.x = element_blank())  # Remove x-axis ticks
+
+# Display the plot
+ggplotly(inflation)
+
+ 
 #comparing various unemployment rate of all the presidents
  unemployent_rate <- ggplot(clean_economy_data, aes(president,unemployment,fill = president))+
    geom_col() +
