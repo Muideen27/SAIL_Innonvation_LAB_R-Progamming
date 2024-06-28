@@ -130,3 +130,30 @@ Minimizing the sum of squared deviations is akin to finding the physical center 
 In statistical terms, defining the "middle" involves using least squares to find the parameter that minimizes the sum of squared deviations from the mean height \( \bar{X} \).
 
 
+## Regression through the origin
+
+Let the parent’s height in Galton’s data be our Explanatory Variable or the Independent Variable i.e., Xi are the parents’ heights.
+
+Let’s pick the slope of a straight line β that minimizes:
+
+∑i=1n(Yi−Xiβ)2
+
+This is exactly using the origin as a pivot point picking the line that minimizes the sum of the squared vertical distances of the points to the line.
+
+
+## Basic Regression Model with Additive Normal Errors
+
+Least squares is an estimation tool, but how do we do inference?
+
+### Linear Regression Model
+
+\[ Y_i = \beta_0 + \beta_1 X_i + \epsilon_i \]
+
+The \( \epsilon_i \) is assumed iid \( N(0, \sigma^2) \).
+
+\[ E[Y_i \mid X_i = x_i] = \mu_i = \beta_0 + \beta_1 x_i \]
+
+\[ \text{Var}(Y_i \mid X_i = x_i) = \sigma^2 \]
+
+Likelihood equivalent model specification is that the \( Y_i \) are independent \( N(\mu_i, \sigma^2) \).
+
