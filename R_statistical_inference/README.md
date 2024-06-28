@@ -163,3 +163,73 @@ Let’s assume that sample are obtained from normal distributions, with a known 
 - Ha:μ≠100
 
 - where μ is the population Average interaction with learning materials seconds per day.
+
+## Two Sample Z-Tests
+In this example, we will use a Z-test to identify whether two population means are the same or different.
+
+We will assume that the class attendance of the two populations are obtained from normal distributions, with the same standard deviation, but possibly different means.
+
+- Group EmmyCool mean = 56
+
+- Group Tope mean = 80
+
+- Sample size of both populations = 30
+
+- We might want to test the hypothesis that
+
+- H0:
+ Group EmmyCool average = Group Tope average
+
+- Ha:
+ Group EmmyCool average ≠
+ Group Tope average
+ 
+## IID random variables
+- When random variables are `iid if they are independent and identically distributed
+
+- This is often the default for random samples
+
+- Many important theories of statistics are founded on assuming that variables are iid
+
+## Asymptotics
+The behavior of statistics as the sample size approaches infinity (or some other relevant number)
+
+Discussion
+- An estimator is consistent if it converges to what you want to estimate
+
+- Consistency is neither necessary nor sufficient for one estimator to be better than another
+
+## Summary
+A type of statistical inference, significance testing, is used to test a hypothesis using appropriate statistical model. A confidence interval is an interval associated with a particular test or procedure that provides a likely range of outcomes for the given confidence level or alpha value. An example of Z-test has been used to illustrate the concept.
+
+## Exercise Brief
+The aim of this exercise is to establish team building, team working and primarily assess participants’ ability to summarise data and undertake statistical inference
+
+## Exercise Instruction
+Form a group of your choice consisting of 4 - 6 participants
+
+Carefully select your group members
+
+Summarise the covid data by regions
+
+Test each region against other to test if their average death number from COVID-19 is same.
+
+Present your test as a Data Scientist
+
+Upload your final code and conclusion onto Padlet under your group’s name
+
+Participants have till noon of tomorrow to complete the tasks.
+
+## P-values
+The P-value is the probability under the null hypothesis of obtaining evidence as extreme or more extreme than would be observed by chance alone
+
+If the P-value is small, then either H0
+ is true and we have observed a rare event or H0
+ is false
+ 
+## Power
+- Power is the probability of rejecting the null hypothesis when it is false
+
+- A type II error (a bad thing, as its name would suggest) is failing to reject the null hypothesis when it’s false; the probability of a type II error is usually called β
+
+- Note Power =1−β
