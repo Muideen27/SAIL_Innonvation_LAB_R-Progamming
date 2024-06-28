@@ -127,8 +127,6 @@ where:
 
 Minimizing the sum of squared deviations is akin to finding the physical center of mass of the histogram of children's heights. This approach leads to \( \mu = \bar{X} \), the mean height of the children.
 
-### GitHub Format
-
 In statistical terms, defining the "middle" involves using least squares to find the parameter that minimizes the sum of squared deviations from the mean height \( \bar{X} \).
 
 
