@@ -1,0 +1,14 @@
+library(BSDA)
+set.seed(234) # to get the same results
+
+
+emmyCool_group<- rnorm(n=30,mean = 56, sd=3)
+
+tope_group<- rnorm(n=30,mean = 80, sd=3)
+
+# sd(emmyCool_group)
+# sd(tope_group)
+
+# Run a Z-test to identify whether two population means are equal or different
+
+# z.test(emmyCool_group, tope_group, alternative="two.sided", mu=0, sigma.x= 3, sigma.y=3,conf.level=.95)
