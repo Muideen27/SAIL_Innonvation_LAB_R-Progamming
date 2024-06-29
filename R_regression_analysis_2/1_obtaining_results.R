@@ -2,7 +2,7 @@
 library(datasets)
 
 # Fit a linear model with mpg as the response variable, and wt and cyl as the predictor variables
-model <- lm(mpg ~ wt + cyl, data = mtcars)
+model <- lm(mpg ~ wt + cyl + carb, data = mtcars)
 
 # Display the summary of the fitted model
 summary(model)

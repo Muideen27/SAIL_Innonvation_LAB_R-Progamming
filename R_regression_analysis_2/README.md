@@ -51,6 +51,7 @@ In this session, we will learn about multivariable regression, logistic regressi
 
 
 ## Extending the SLR
+
 - The general multivariate linear model extends simple linear regression (SLR) by adding terms linearly into the model.
 Yi=β1X1i+β2X2i+…+βpXpi+ϵi=∑k=1pXikβj+ϵi
 
@@ -61,6 +62,7 @@ Yi=β1X1i+β2X2i+…+βpXpi+ϵi=∑k=1pXikβj+ϵi
 Yi=β1X21i+β2X22i+…+βpX2pi+ϵi
 
 ## General case
+
 - The equations
 ∑i=1n(Yi−X1iβ^1−…−Xipβ^p)Xk=0
 
@@ -80,6 +82,7 @@ Similar to our SLR, we can use the lm() function to set up our multivariable reg
 `lm(dependent_variable ~ independent_variable1 + independent_variable2 + ..., data = data_frame)`
 
 ## Example of Multivariable Regression in R
+
 For example, if we wanted to predict the mpg of a car based on its weight and number of cylinders.
 
 We are quite familiar with the mtcars dataset (by now). The dataset contains information about the different cars in the Motor Trend magazine. The variables in the dataset include:
@@ -97,11 +100,13 @@ We are quite familiar with the mtcars dataset (by now). The dataset contains inf
 - carb: Number of carburetors
 
 ## Obtaining results
+
 Similar to the SLR, once the model has been created, we can use the summary() function to view the results of the regression analysis.
 
 This will provide us with information about the coefficients of the model, as well as other useful information such as the R-squared value and the F-statistic.
 
 ## Interpreting the Results of a Multivariable Regression Model
+
 - The output of the summary() function will provide us with a variety of information about our model, including the coefficients for each independent variable, the R-squared value, and the F-statistic.
 
 - The coefficient of each independent variable tells us how much the dependent variable is expected to change when that independent variable is changed by one unit. For example, from our model, the coefficient for wt is −3.1910
@@ -111,6 +116,7 @@ This will provide us with information about the coefficients of the model, as we
 - i.e., the interpretation of a multivariate regression coefficient is the expected change in the response per unit change in the regressor, holding all of the other regressors fixed.
 
 ## How to Assess the Fit of a Multivariable Regression Model
+
 Once we have interpreted the results of our multivariable regression model, we can use a variety of techniques to assess the fit of our model.
 
 - The R-squared value tells us how well our model fits the data. The higher the R-squared value, the better our model fits the data (caveat on this).
@@ -121,6 +127,7 @@ Once we have interpreted the results of our multivariable regression model, we c
 
 
 ## Genralisation
+
 We can apply almost all principles learnt under SLR to multivariable linear regression models
 
 predict(model, new_data)
@@ -149,6 +156,7 @@ follows a T
 Predicted responses have standard errors and we can calculate predicted and expected response intervals.
 
 ## Linear models
+
 - Linear models are considered the single most important applied statistical and machine learning techniqe.
 
 - Some amazing things that you can accomplish with linear models
@@ -162,6 +170,7 @@ Predicted responses have standard errors and we can calculate predicted and expe
 `It can build accurate prediction models`
 
 ##Logistic Regression
+
 - Humans generally care about outcomes that have two values (great economic values or implications)
 
 `Employee/Client quitting/retained`
@@ -175,3 +184,46 @@ Predicted responses have standard errors and we can calculate predicted and expe
 `etc`
 
 - Recall from our probability distribution, binary, Bernoulli or 0/1 outcomes
+
+## glm function
+
+Logistic regression can be:
+
+- Simple logistic regression
+
+- glm(response ~ explanatory, data = dataset, family = binomial)
+
+- Multiple logistic regression
+
+- glm(response ~ explanatory1 + explanatory2, data = dataset, family = binomial)
+
+- Multiple logistic regression with interaction(s)
+
+- glm(response ~ explanatory1 * explanatory2, data = dataset, family = binomial)
+
+# Regression Analysis II
+
+##Linear regression
+
+`churni=b0+b1tenurei+ei`
+
+churni - 1 if a client leaves, 0 if not
+
+tenurei - How long the client has been with the telco
+
+b0 - probability of a client churning if their tenure is 0
+
+b1 - increase in probability of a client churning for each additional tenure
+
+ei - residual variation due
+
+
+
+## Odds
+Binary Outcome 0/1    -> churni
+
+Probability (0,1)     -> Pr(churni|tenurei,b0,b1)
+
+Odds (0,∞)            -> Pr(churni|tenurei,b0,b1) / 1−Pr(churni|tenurei,b0,b1)
+
+Log odds (−∞,∞)       -> log(Pr(churni|tenurei,b0,b1) / 1−Pr(churni|tenurei,b0,b1))
