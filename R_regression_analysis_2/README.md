@@ -227,3 +227,83 @@ Probability (0,1)     -> Pr(churni|tenurei,b0,b1)
 Odds (0,∞)            -> Pr(churni|tenurei,b0,b1) / 1−Pr(churni|tenurei,b0,b1)
 
 Log odds (−∞,∞)       -> log(Pr(churni|tenurei,b0,b1) / 1−Pr(churni|tenurei,b0,b1))
+
+
+## Linear vs. logistic regression
+Linear                -> churni = b0 +b1 tenurei + ei
+
+or
+
+               E[churni|tenurei,b0,b1]=b0+b1tenurei
+
+Logistic
+
+                    -> Pr(churni|tenurei,b0,b1)=exp(b0+b1tenurei) / 1+exp(b0+b1tenurei)
+
+or
+
+          log(Pr(churni|tenurei,b0,b1) / 1−Pr(churni|tenurei,b0,b1)) = b0+b1tenurei
+          
+          
+          
+## Interpreting Logistic Regression
+
+b0 - Log odds of a client churning if their tenure is zero
+
+b1 - Log odds ratio of a client’s churning probability for every increase in tenure (compared to zero tenure)
+
+exp(b1) - Odds ratio of a client’s churning probability for every increase in tenure (compared to zero tenure)
+
+## Explaining odds
+
+- If you gamble, where outcome is like flipping a coin with success probability p
+
+- You win X (if it comes up heads) but you lose Y (If it comes up tails).
+
+- What should we set X and Y for the game to be fair?
+
+E[earnings]=Xp−Y(1−p)=0
+
+- Implies
+
+Y/X=p/1−p
+
+- The odds can be said as “How much should you be willing to pay for a p probability of winning a Naira?”
+
+(If p>0.5 you will have to pay more if you lose than you will get if you win.)
+
+(If p<0.5 you will have to pay less if you lose than you will get if you win.)
+
+## Helping interpretaion
+Intercept: The log-odds of churning when tenure=0 is 0.027
+
+Tenure: For every unit increase in tenure the log-odds of churning decrease by −0.0387
+ i.e. the chances of leaving decrease as clients’ tenure increases.
+
+Given p<0.5, we can reject the null hypothesis b1=0
+ that one unit increase in tenure does not affect chances of churning.
+
+## Interpreting Odds Ratios
+
+- Odd ratios are not probabilities
+
+- Odds ratio of 1 implies there is no difference in odds
+
+- Log odds ratio of 0 implies there is no difference in odds
+
+- Odds ratio < 0.5 or > 2 commonly a “moderate effect”
+
+- Relative risk Pr(churni|tenurei=0) / Pr(churni|tenurei=0)
+ often easier to interpret, harder to estimate
+
+- For small probabilities RR ≈ but they are not the same!
+
+
+## Conclusion
+In this lesson, we have learned about multivariable regression, logistic regression and how to use R to perform these types of analyses.
+
+Read more on odds ratio
+
+Note: Support materials from Cousera & DataCamp
+
+Feedback Please, do not hesitate to give your feedback or seek clarification regarding this section. Scan the barcode.
