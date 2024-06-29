@@ -18,3 +18,20 @@ In this session, we will learn about multivariable regression, logistic regressi
 - Session will be useful
 
 `Machine Learning`
+
+## Required Libraries
+
+- library(tidyverse)
+
+- library(usingR)
+
+- library(manipulate)
+
+- library(broom)
+
+- library(BSDA)
+
+- library(broom)
+
+- library(ggfortify)
+
