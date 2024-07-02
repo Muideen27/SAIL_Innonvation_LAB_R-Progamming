@@ -1,10 +1,20 @@
-#library(BSDA)
-set.seed(234) # to get the same results
+install.packages("BSDA")
 
-# Generate sample data from normal distribution (Average interaction with learning materials seconds per day)
+# Load the BSDA library
+library(BSDA)
 
-cohort1<- rnorm(n=22, mean = 57, sd=30)
+# Set seed for reproducibility
+set.seed(234)
+
+# Generate sample data from a normal distribution (Average interaction with learning materials seconds per day)
+cohort1 <- rnorm(n = 22, mean = 57, sd = 30)
+
+print(cohort1)
+
+# Perform one-sample Z-test
+z_test_result <- z.test(cohort1, mu = 100, sigma.x = 30)
+
+# Display the result
+print(z_test_result)
 
 
-#perform one sample z-test
-z.test(cohort1, mu=100, sigma.x=30)
