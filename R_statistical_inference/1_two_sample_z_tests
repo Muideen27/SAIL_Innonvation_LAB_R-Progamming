@@ -1,0 +1,20 @@
+# Load the BSDA library
+library(BSDA)
+
+# Set seed for reproducibility
+set.seed(234)
+
+# Generate sample data for both groups
+emmyCool_group <- rnorm(n = 30, mean = 56, sd = 3)
+
+print(emmyCool_group)
+
+tope_group <- rnorm(n = 30, mean = 80, sd = 3)
+
+print(tope_group)
+
+# Run a Z-test to identify whether two population means are equal or different
+z_test_result <- z.test(emmyCool_group, tope_group, alternative = "two.sided", mu = 0, sigma.x = 3, sigma.y = 3, conf.level = 0.95)
+
+# Display the result
+print(z_test_result)
