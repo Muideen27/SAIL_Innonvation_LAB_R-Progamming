@@ -192,7 +192,7 @@ We will assume that the class attendance of the two populations are obtained fro
  Group EmmyCool average ≠
  Group Tope average
  
- ## Breaking Down the Results:
+## Breaking Down the Results:
 Z-Statistic (z = -35.052):
 
 - The Z-value tells us how many standard deviations the observed difference between the two groups' average attendance is from zero.
@@ -214,7 +214,7 @@ Sample Estimates:
 Mean of EmmyCool: 56.08863
 Mean of Tope: 79.52029
 
-## Conclusion:
+### Conclusion:
 
 - Reject the Null Hypothesis: Since our p-value is so small, we reject the idea that the groups have the same average attendance.
 - Difference Exists: We conclude that the average attendance in Group Tope is significantly higher than in Group EmmyCool.
