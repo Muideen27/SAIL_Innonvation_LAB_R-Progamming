@@ -164,6 +164,14 @@ Let’s assume that sample are obtained from normal distributions, with a known 
 
 - where μ is the population Average interaction with learning materials seconds per day.
 
+### Interpretation:
+- Test Statistic (z): The Z-value is -7.368, which indicates how many standard deviations the sample mean is from the population mean under the null hypothesis.
+- P-value: The p-value is very small (1.807e-13), which is much less than the typical significance level of 0.05. This means we reject the null hypothesis.
+- Confidence Interval: The 95% confidence interval for the sample mean is approximately [45.66, 68.63]. This interval does not include the population mean of 100.
+
+### Conclusion:
+Given the p-value is significantly smaller than 0.05, we reject the null hypothesis 𝐻0 :𝜇= 100 This suggests that there is strong evidence that the average daily interaction with learning materials is not 100 minutes.
+
 ## Two Sample Z-Tests
 In this example, we will use a Z-test to identify whether two population means are the same or different.
 
@@ -184,6 +192,33 @@ We will assume that the class attendance of the two populations are obtained fro
  Group EmmyCool average ≠
  Group Tope average
  
+ ## Breaking Down the Results:
+Z-Statistic (z = -35.052):
+
+- The Z-value tells us how many standard deviations the observed difference between the two groups' average attendance is from zero.
+- A Z-value of -35.052 is very large (in absolute terms), indicating a huge difference between the two groups.
+
+P-Value (< 2.2e-16):
+
+- The p-value is the probability of getting such a large difference between the groups if they were actually the same.
+- A p-value less than 0.05 (or in this case, much smaller) means the difference is statistically significant.
+- Here, the p-value is incredibly small, much less than 0.05, so we conclude the difference is real and not due to chance.
+
+Confidence Interval ([-24.10795, -21.22538]):
+
+- This range estimates how different the average attendance of the two groups could be.
+- Because this interval is entirely negative, it shows that Group Tope's average attendance is definitely higher than Group EmmyCool's average attendance by between about 21 and 24 minutes.
+
+Sample Estimates:
+
+Mean of EmmyCool: 56.08863
+Mean of Tope: 79.52029
+
+## Conclusion:
+
+- Reject the Null Hypothesis: Since our p-value is so small, we reject the idea that the groups have the same average attendance.
+- Difference Exists: We conclude that the average attendance in Group Tope is significantly higher than in Group EmmyCool.
+
 ## IID random variables
 - When random variables are `iid if they are independent and identically distributed
 

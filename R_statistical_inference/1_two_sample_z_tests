@@ -18,3 +18,5 @@ z_test_result <- z.test(emmyCool_group, tope_group, alternative = "two.sided", m
 
 # Display the result
 print(z_test_result)
+
+# Check result interpretation in the README.md file
