@@ -48,6 +48,7 @@ health_center_data_cleaned_sf <- geo_code_tbl_filtered %>%
 
 # Display the spatial data on an interactive map
 mapview(health_center_data_cleaned_sf)
+View(health_center_data_cleaned_sf)
 
 # Add the leaflet map with various tile layers and markers
 leaflet(health_center_data_cleaned_sf) %>%
@@ -62,3 +63,4 @@ leaflet(health_center_data_cleaned_sf) %>%
                     as.character(lga),  # Use lga for the popup value
                     "Not sure of the market's location") # Default popup text
   )
+edit()
