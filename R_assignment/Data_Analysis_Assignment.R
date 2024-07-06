@@ -14,7 +14,7 @@ economy_data <- read_excel("/home/muideen/Downloads/R_files/Nigeria_Economy.xlsx
 
 economy_data
 
-#Inspecting the data showing the first six rows
+#Inspecting the data showing the firsdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAbElEQVR4Xs2RQQrAMAgEfZgf7W9LAguybljJpR3wEse5JOL3ZObDb4x1loDhHbBOFU6i2Ddnw2KNiXcdAXygJlwE8OFVBHDgKrLgSInN4WMe9iXiqIVsTMjH7z/GhNTEibOxQswcYIWYOR/zAjBJfiXh3jZ6AAAAAElFTkSuQmCCt six rows
 head(economy_data)
 
 #further inspection by showing the glimpse
