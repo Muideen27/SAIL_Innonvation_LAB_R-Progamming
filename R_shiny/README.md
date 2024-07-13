@@ -68,3 +68,10 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 - How about we create a histogram of data
 
 - Put a slider on so that the user has to guess the mean
+
+## Tighter control over style
+### All of the style elements are handled through ui.R
+
+- For students with a lot of experience in html, js, css it would be a breeze and probably easier and more flexible than the R html controls in ui.R
+
+- bslib has changed so many things about R Shiny (Read more on this)
