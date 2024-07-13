@@ -48,3 +48,9 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 
 - Basically, this lecture is walking through that tutorial offering some of our insights
 
+## Project Directory
+### A shiny directory containing at least two parts. The two parts can also be combined as a file but we will start off with them as 2 different files.
+
+- ui.R : This controls the look i.e., the user’s interface.
+
+- server.R : This controls what our app does.
