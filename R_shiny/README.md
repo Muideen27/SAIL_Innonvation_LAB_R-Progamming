@@ -54,3 +54,10 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 - ui.R : This controls the look i.e., the user’s interface.
 
 - server.R : This controls what our app does.
+
+## To run it
+- In R, change to the directories with these files and type runApp()
+
+- or put the path to the directory as an argument
+
+- It should open an browser window with the app running
