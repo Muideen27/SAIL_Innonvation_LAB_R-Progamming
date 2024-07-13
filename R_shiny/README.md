@@ -89,3 +89,16 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 
 - Put a submit button so that Shiny only executes complex code after user hits submit
 
+## Distributing a Shiny app
+- The quickest way is to send (or put on github or gist or dropbox or whatever) someone the app directory and they can then call runApp
+
+- You could create an R package and create a wrapper that calls runApp
+
+- Of course, these solutions only work if the user knows R
+
+- Another option is to run a shiny server
+
+- Requires setting up a (Shiny server)
+
+- Probably easiest if you use one of the virtual machines where they already have Shiny servers running well (for example, on AWS)
+- Avoid putting system calls in your code (this is one of the first things many of us do for fun, but it introduces security concerns)
