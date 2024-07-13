@@ -71,7 +71,7 @@ Each entity uses predictive analytics to optimize operations, enhance decision-m
 Supervised learning is a type of machine learning where the model is trained on labeled data. In supervised learning:
 
 - The data has been labeled with the correct output.
-- The model is trained to predict the output based on the input.
+- The model is trained to predict the output basehttps://cran.rstudio.com/bin/windows/Rtoolsd on the input.
 - Examples include classification tasks (predicting categories) and regression tasks (predicting continuous values).
 
 ## Unsupervised Learning
