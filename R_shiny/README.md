@@ -19,3 +19,32 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 
 - When I was learning R, " ... it lacks the flexibility of full featured (and more complex) solutions".
 
+## Shiny prerequisites
+### Shiny doesn’t really require it, but as with all web programming, a little knowledge of html, css and js is very helpful
+
+- html gives a web page structure and sectioning as well as markup instructions
+
+- css gives the style
+
+- js for interactivity
+
+### There are more than sufficient materials online on Shiny R.
+
+## Context
+- Let’s say we create a prediction algorithm to predict risk for developing diabetes.
+
+- You’re hoping patients and caregivers will be able to enter their data and, if needed, take preventative measures.
+
+- You want to create a web site so that users can input the relevant predictors and obtain their prediction.
+
+## Getting started
+- Make sure you have the latest release of R installed
+
+- If on windows, make sure that you have Rtools installed
+
+- install.packages("shiny")
+
+- Great tutorial at http://rstudio.github.io/shiny/tutorial/
+
+- Basically, this lecture is walking through that tutorial offering some of our insights
+
