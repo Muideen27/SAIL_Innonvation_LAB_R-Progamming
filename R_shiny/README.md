@@ -61,3 +61,10 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 - or put the path to the directory as an argument
 
 - It should open an browser window with the app running
+
+## Image example
+- Let’s build an example with an image
+
+- How about we create a histogram of data
+
+- Put a slider on so that the user has to guess the mean
