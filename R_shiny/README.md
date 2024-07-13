@@ -75,3 +75,17 @@ In this session, we will undertake an hands-on session to learn R Shiny.
 - For students with a lot of experience in html, js, css it would be a breeze and probably easier and more flexible than the R html controls in ui.R
 
 - bslib has changed so many things about R Shiny (Read more on this)
+
+## Other things Shiny can do
+- Allow users to upload or download files
+
+- Have tabbed main panels
+
+- Have editable data tables
+
+- Have a dynamic UI
+
+- User defined inputs and outputs
+
+- Put a submit button so that Shiny only executes complex code after user hits submit
+
