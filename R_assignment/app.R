@@ -1,4 +1,12 @@
 # Load necessary libraries
+if (!require(shiny)) install.packages("shiny", repos = "https://cloud.r-project.org/")
+if (!require(ggplot2)) install.packages("ggplot2", repos = "https://cloud.r-project.org/")
+if (!require(plotly)) install.packages("plotly", repos = "https://cloud.r-project.org/")
+if (!require(dplyr)) install.packages("dplyr", repos = "https://cloud.r-project.org/")
+if (!require(DBI)) install.packages("DBI", repos = "https://cloud.r-project.org/")
+if (!require(RPostgres)) install.packages("RPostgres", repos = "https://cloud.r-project.org/")
+if (!require(janitor)) install.packages("janitor", repos = "https://cloud.r-project.org/")
+
 library(shiny)
 library(ggplot2)
 library(plotly)
@@ -6,6 +14,24 @@ library(dplyr)
 library(DBI)
 library(RPostgres)
 library(janitor)
+
+# Define UI for application
+ui <- fluidPage(
+  titlePanel("Nigeria's Economic Growth"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("plot", "Choose a plot to display:",
+                  choices = list("President Year Count" = "years",
+                                 "Inflation Rate" = "inflation",
+                                 "Unemployment Rate" = "unemployment",
+                                 "Industrial Sector Growth" = "sectorial",
+                                 "Correlation between Inflation and Unemployment" = "correlation"))
+    ),
+    mainPanel(
+      plotlyOutput("plotOutput")
+    )
+  )
+)
 
 # Define server logic
 server <- function(input, output) {

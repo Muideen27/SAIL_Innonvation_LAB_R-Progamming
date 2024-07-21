@@ -1,0 +1,12 @@
+name: R_assignment-Group-B
+title: R_assignment-Group-B
+username: muideen-data
+account: muideen-data
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12342533
+bundleId: 8888775
+url: https://muideen-data.shinyapps.io/R_assignment-Group-B/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
