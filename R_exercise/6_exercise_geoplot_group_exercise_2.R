@@ -1,4 +1,8 @@
 # Load necessary libraries
+install.packages("sf")
+install.packages("mapview")
+install.packages("leaflet")
+
 library(dplyr)        # For data manipulation
 library(sf)           # For handling spatial data
 library(mapview)      # For interactive maps
@@ -8,7 +12,7 @@ library(janitor)      # For cleaning data frames
 library(tidygeocoder) # For geocoding addresses
 
 # Load health center data from an Excel file
-health_center_data <- read_excel("C:\\Users\\Open User\\Downloads\\health centre locations.xlsx")
+health_center_data <- read_excel("/home/muideen/Downloads/health_centre_locations.xlsx")
 
 # View the first few rows of the dataset
 head(health_center_data)
