@@ -1,50 +1,73 @@
+# Load necessary libraries
 library(shiny)
 library(ggplot2)
-library(png)
-library(grid)
+library(plotly)
+library(dplyr)
+library(DBI)
+library(RPostgres)
+library(janitor)
 
+# Define server logic
 server <- function(input, output) {
   
-  tenure <- data.frame(
-    president = c("Abdulsalami Abubakar", "Goodluck Jonathan", "Ibrahim Babangida",
-                  "Muhammadu Buhari", "Musa Yar'Adua", "Olusegun Obasanjo", "Sani Abacha"),
-    Year_Count = c(1, 5, 4, 8, 3, 8, 5)
-  )
+  # Connect to the PostgreSQL database
+  con <- dbConnect(RPostgres::Postgres(), 
+                   dbname = 'nigeriaeconomy',
+                   host = 'localhost',
+                   port = 5432,
+                   user = 'sail',
+                   password = '1234')
   
-  output$plotOutput <- renderPlot({
+  # Load the data from PostgreSQL
+  economy_data <- dbReadTable(con, 'economy_data')
+  
+  # Clean the column names
+  clean_economy_data <- clean_names(economy_data)
+  
+  # Data preprocessing for year count
+  clean_economy_data2 <- clean_economy_data %>%
+    group_by(president) %>%
+    summarise(year_count = n())
+  
+  output$plotOutput <- renderPlotly({
     if (input$plot == "years") {
-      ggplot(tenure, aes(president, Year_Count, fill = president)) +
+      p <- ggplot(clean_economy_data2, aes(president, year_count, fill = president)) +
         geom_col() +
         theme_minimal() +
         labs(title = "President's Year Count from 1990-2023", x = "President", y = "Year Count")
+      ggplotly(p)
     } else if (input$plot == "inflation") {
-      img <- readPNG("inflation.png")
-      grid::grid.raster(img)
+      p <- ggplot(clean_economy_data, aes(president, inflation_rate, fill = president)) +
+        geom_col() +
+        theme_minimal() +
+        labs(title = "Inflation Rate by President", x = "President", y = "Inflation Rate")
+      ggplotly(p)
     } else if (input$plot == "unemployment") {
-      img <- readPNG("Unemployment.png")
-      grid::grid.raster(img)
+      p <- ggplot(clean_economy_data, aes(president, unemployment, fill = president)) +
+        geom_col() +
+        theme_minimal() +
+        labs(title = "Unemployment Rate by President", x = "President", y = "Unemployment Rate")
+      ggplotly(p)
     } else if (input$plot == "sectorial") {
-      img <- readPNG("Sectorial.png")
-      grid::grid.raster(img)
+      p <- ggplot(clean_economy_data, aes(president, industry, fill = president)) +
+        geom_col() +
+        theme_minimal() +
+        labs(title = "Industrial Growth by President", x = "President", y = "Industry")
+      ggplotly(p)
     } else if (input$plot == "correlation") {
-      img <- readPNG("image.png")
-      grid::grid.raster(img)
+      p <- ggplot(clean_economy_data, aes(x = inflation_rate, y = unemployment)) +
+        geom_point() +
+        theme_minimal() +
+        labs(title = "Correlation between Inflation Rate and Unemployment", x = "Inflation Rate", y = "Unemployment")
+      ggplotly(p)
     }
   })
   
-  output$textOutput <- renderText({
-    if (input$plot == "years") {
-      "The tenure analysis shows that Muhammadu Buhari and Olusegun Obasanjo each served the longest terms of 8 years, while Abdulsalami Abubakar served the shortest term of 1 year."
-    } else if (input$plot == "inflation") {
-      "The inflation rate comparison reveals that Sani Abacha's regime experienced the highest inflation rates, while Abdulsalami Abubakar's tenure had the lowest inflation rates."
-    } else if (input$plot == "unemployment") {
-      "The unemployment rate comparison indicates that Muhammadu Buhari's tenure had the highest unemployment rates, with Abdulsalami Abubakar experiencing the lowest rates."
-    } else if (input$plot == "sectorial") {
-      "Sectorial contributions to GDP over time show that the services sector has been the largest contributor, followed by industry and agriculture. There is a notable decline in 2023 across all sectors."
-    } else if (input$plot == "correlation") {
-      "The scatter plot shows a negative correlation between inflation rate and unemployment rate, suggesting that higher inflation rates might be associated with lower unemployment rates."
-    }
+  # Disconnect from the database when the server stops
+  onStop(function() {
+    dbDisconnect(con)
   })
 }
 
+# Run the application 
 shinyApp(ui = ui, server = server)

@@ -1,10 +1,8 @@
-install.packages("shiny")
-install.packages("ggplot2")
-install.packages("dplyr")
-
+# Load necessary libraries
 library(shiny)
-library(ggplot2)
+library(plotly)
 
+# Define UI for application
 ui <- fluidPage(
   titlePanel("Nigeria's Economic Growth"),
   sidebarLayout(
@@ -13,13 +11,11 @@ ui <- fluidPage(
                   choices = list("President Year Count" = "years",
                                  "Inflation Rate" = "inflation",
                                  "Unemployment Rate" = "unemployment",
-                                 "Sectorial Contributions to GDP" = "sectorial",
+                                 "Industrial Sector Growth" = "sectorial",
                                  "Correlation between Inflation and Unemployment" = "correlation"))
     ),
     mainPanel(
-      plotOutput("plotOutput"),
-      textOutput("textOutput")
+      plotlyOutput("plotOutput")
     )
   )
 )
-
