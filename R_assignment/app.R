@@ -3,24 +3,53 @@ if (!require(shiny)) install.packages("shiny", repos = "https://cloud.r-project.
 if (!require(ggplot2)) install.packages("ggplot2", repos = "https://cloud.r-project.org/")
 if (!require(plotly)) install.packages("plotly", repos = "https://cloud.r-project.org/")
 if (!require(dplyr)) install.packages("dplyr", repos = "https://cloud.r-project.org/")
-if (!require(readxl)) install.packages("readxl", repos = "https://cloud.r-project.org/")
+if (!require(DBI)) install.packages("DBI", repos = "https://cloud.r-project.org/")
+if (!require(RPostgres)) install.packages("RPostgres", repos = "https://cloud.r-project.org/")
 if (!require(janitor)) install.packages("janitor", repos = "https://cloud.r-project.org/")
 
 library(shiny)
 library(ggplot2)
 library(plotly)
 library(dplyr)
-library(readxl)
+library(DBI)
+library(RPostgres)
 library(janitor)
 
-# Load the Dataset from local machine
-economy_data <- read_excel("C:\\Users\\Open User\\Downloads\\Nigeria_Economy.xlsx")
-
-# Clean the column names
-clean_economy_data <- clean_names(economy_data)
+# Define UI for application
+ui <- fluidPage(
+  titlePanel("Nigeria's Economic Growth"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("plot", "Choose a plot to display:",
+                  choices = list("President Year Count" = "years",
+                                 "Inflation Rate" = "inflation",
+                                 "Unemployment Rate" = "unemployment",
+                                 "Industrial Sector Growth" = "sectorial",
+                                 "Correlation between Inflation and Unemployment" = "correlation"))
+    ),
+    mainPanel(
+      plotlyOutput("plotOutput")
+    )
+  )
+)
 
 # Define server logic
 server <- function(input, output) {
+  
+  # Connect to the PostgreSQL database
+  con <- dbConnect(RPostgres::Postgres(), 
+                   dbname = 'nigeriaeconomy',
+                   host = 'localhost',
+                   port = 5432,
+                   user = 'sail',
+                   password = '1234')
+  
+  # Load the data from PostgreSQL
+  economy_data <- dbReadTable(con, 'economy_data')
+  
+  # Clean the column names
+  clean_economy_data <- clean_names(economy_data)
+  
   # Data preprocessing for year count
   clean_economy_data2 <- clean_economy_data %>%
     group_by(president) %>%
@@ -58,6 +87,11 @@ server <- function(input, output) {
         labs(title = "Correlation between Inflation Rate and Unemployment", x = "Inflation Rate", y = "Unemployment")
       ggplotly(p)
     }
+  })
+  
+  # Disconnect from the database when the server stops
+  onStop(function() {
+    dbDisconnect(con)
   })
 }
 
