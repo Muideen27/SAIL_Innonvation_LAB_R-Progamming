@@ -2,6 +2,7 @@ install.packages("shiny")
 install.packages("ggplot2")
 install.packages("dplyr")
 
+installed.packages("shiny")
 library(shiny)
 library(ggplot2)
 
@@ -17,8 +18,7 @@ ui <- fluidPage(
                                  "Correlation between Inflation and Unemployment" = "correlation"))
     ),
     mainPanel(
-      plotOutput("plotOutput"),
-      textOutput("textOutput")
+      plotlyOutput("plotOutput")
     )
   )
 )
